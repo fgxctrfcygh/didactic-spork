@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .container {
+            width: 800px;
+            height: 900px;
+           margin-left: 35%;
+           margin-top: 100px;
+        }
+         .cards{
+             width: 900px;
+             height: 600px;
+             margin-left: -190px;
+             margin-top: 50px;
+             background-color: #f5f5f5;
+             border-radius: 10px;
+             padding: 20px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             display: flex;
+             justify-content: space-around;
+             display: grid;
+             grid-template-columns: repeat(3,3fr);
+         }
+         #piyoda{
+             width: 200px;
+             height: 250px;
+             background-color: #fff;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             border: 2px solid black;
+             text-align: center;
+         }
+         #velik{
+             width: 200px;
+             height: 250px;
+             background-color: #fff;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             border: 2px solid black;
+             text-align: center;
+         }
+         #mashina{
+             width: 200px;
+             height: 250px;
+             background-color: #fff;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             border: 2px solid black;
+             text-align: center;
+         }
+         #samolyot{
+             width: 200px;
+             height: 250px;
+             background-color: #fff;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             border: 2px solid black;
+             text-align: center;
+         }
+         #btn{
+             width: 150px;
+             height: 30px;
+             background-color: #fff;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             border: 2px solid black;
+             text-align: center;
+             font-size: 20px;
+         }
+         #btn:hover{
+            background-color: #cd8181;
+             cursor: pointer;
+         }
+         #masofa{
+             width: 150px;
+             height: 30px;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             border: 2px solid black;
+             text-align: center;
+             font-size: 20px;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <h1>Kim Birinchi Boradi</h1>
+          <form id="form" action="submit" style="font-size: 30px;">
+              <label for="text">Masofa:</label>
+               <input type="text" id="masofa">
+               <button id="btn">Hisobla</button>
+          </form>
+          <div class="cards">
+                  <div id="piyoda">
+                    <img style="width: 100px; height: 100px; margin-top: 20px;" src="man.png" alt="Piyoda">
+                    <h3>Piyoda</h3>
+                    <p id="piyoda-result">....</p>
+                     <p id="piyoda-time">....</p>
+                  </div>
+                  <div id="velik">
+                    <img src="cycling.png" alt="Velik">
+                    <h3>Velik</h3>
+                    <p id="velik-result">....</p>
+                     <p id="velik-time">....</p>
+                  </div>
+                  <div id="mashina">
+                    <img src="hatchback.png" alt="car">
+                    <h3>Mashina</h3>
+                    <p id="mashina-result">....</p>
+                     <p id="mashina-time">....</p>
+                  </div>
+                  <div id="samolyot">
+                    <img src="helicopter.png" alt="plane">
+                    <h3>Vertalyot</h3>
+                    <p id="samolyot-result">....</p>
+                     <p id="samolyot-time">....</p>
+                  </div>
+                   <div id="samolyot">
+                    <img src="sportbike.png" alt="plane">
+                    <h3>Mototsikl</h3>
+                    <p id="samolyot-result">....</p>
+                     <p id="samolyot-time">....</p>
+                  </div>
+                   <div id="samolyot">
+                    <img src="electric-scooter.png" alt="plane">
+                    <h3>elektr samokat</h3>
+                    <p id="samolyot-result">....</p>
+                     <p id="samolyot-time">....</p>
+                  </div>
+          </div>
+    </div>
+    <script>
+        let piyodaResult = document.getElementById("piyoda-result");
+        let piyodaTime = document.getElementById("piyoda-time");
+        let velikResult = document.getElementById("velik-result");
+        let velikTime = document.getElementById("velik-time");
+        let mashinaResult = document.getElementById("mashina-result");
+        let mashinaTime = document.getElementById("mashina-time");
+        let vertalyotResult = document.getElementById("vertalyot-result");
+        let vertalyotTime = document.getElementById("vertalyot-time");
+        let mototsiklResult = document.getElementById("mototsikl-result");
+        let mototsiklTime = document.getElementById("mototsikl-time");
+        let elektrsamokatResult = document.getElementById("elektr samokat-result");
+        let elektrsamokatTime = document.getElementById("elektr samokat-time");
+
+         let enterNumber = document.getElementById("masofa");
+         let hisobla = document.getElementById("btn");
+          
+         form.addEventListener("submit", function(event){
+            event.preventDefault();
+
+           let piyoda = Math.round((((enterNumber.value))) / 8)
+                  piyodaResult.textContent = Math.floor((enterNumber.value) / 8)
+                  piyodaTime.textContent = piyoda;
+            let velik = Math.round((((enterNumber.value))) / 15)
+                  velikResult.textContent = Math.floor((enterNumber.value) / 15)
+                  velikTime.textContent = velik;
+            let mashina = Math.round((((enterNumber.value))) / 90)
+                  mashinaResult.textContent = Math.floor((enterNumber.value) / 90)
+                  mashinaTime.textContent = mashina;
+            let vertalyot = Math.round((((enterNumber.value))) / 300)
+                  vertalyotResult.textContent = Math.floor((enterNumber.value) / 300)
+                  vertalyotTime.textContent = vertalyot;
+                   let mototsikl= Math.round((((enterNumber.value))) / 40)
+                  mototsiklResult.textContent = Math.floor((enterNumber.value) / 40)
+                   mototsiklTime.textContent =  mototsikl;
+                   let elektrsamokat = Math.round((((enterNumber.value))) / 20)
+                   elektrsamokatResult.textContent = Math.floor((enterNumber.value) / 20)
+                  elektrsamokatTime.textContent = elektrsamokat;
+         })
+    </script>
+</body>
+</html>
